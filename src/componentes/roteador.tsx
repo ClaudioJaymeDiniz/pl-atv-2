@@ -2,12 +2,16 @@ import { Component } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import ListaCliente from "./listaClientes";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
+import FormularioCadastroProduto from "./formularioCadastroProduto";
+import FormularioCadastroServico from "./formularioCadastroServico"
+import ListaProduto from "./listaProduto";
+import ListaServico from "./listaServico";
 
 type state = {
     tela: string
 }
 
-export default class Roteador extends Component<{}, state>{
+export default class Roteador extends Component<{}, state> {
     constructor(props: {} | Readonly<{}>) {
         super(props)
         this.state = {
@@ -25,28 +29,51 @@ export default class Roteador extends Component<{}, state>{
     }
 
     render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#99ccff" botoes={['Clientes', 'Cadastros', 'Produtos']} />
+        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#99ccff" 
+        botoes={['Clientes', 'Cadastro Cliente', 'Cadastro Produto', 'Cadastro Serviço', 'Lista Produtos', 'Lista Serviços']} />;
+        
         if (this.state.tela === 'Clientes') {
             return (
                 <>
                     {barraNavegacao}
                     <ListaCliente tema="#e3f2fd" />
                 </>
-            )
-        }if(this.state.tela === 'Protudos'){
-            return(
+            );
+        } else if (this.state.tela === 'Cadastro Produto') { 
+            return (
                 <>
-                
+                    {barraNavegacao}
+                    <FormularioCadastroProduto tema="#e3f2fd" />
                 </>
-            )
-
-        }else {
+            );
+        } else if (this.state.tela === 'Cadastro Serviço') { 
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroServico tema="#e3f2fd" />
+                </>
+            );
+        } else if (this.state.tela === 'Lista Produtos') { 
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaProduto tema="#e3f2fd" />
+                </>
+            );
+        } else if (this.state.tela === 'Lista Serviços') { 
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServico tema="#e3f2fd" />
+                </>
+            );
+        } else {
             return (
                 <>
                     {barraNavegacao}
                     <FormularioCadastroCliente tema="#e3f2fd" />
                 </>
-            )
+            );
         }
     }
 }
