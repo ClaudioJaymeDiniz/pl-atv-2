@@ -33,6 +33,15 @@ export default class ListaCliente extends Component<props, state> {
     handleCloseModal() {
         this.setState({ showModal: false });
     }
+    handleAlterar() {
+        console.log(`Alterar cliente: ${this.state.selectedItem}`);
+        this.handleCloseModal();
+    }
+
+    handleExcluir() {
+        console.log(`Deletar cliente: ${this.state.selectedItem}`);
+        this.handleCloseModal();
+    }
 
     render() {
         const { tema } = this.props;
@@ -67,7 +76,8 @@ export default class ListaCliente extends Component<props, state> {
                                     <p>email: {selectedItem}@email.com</p>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn" onClick={this.handleCloseModal}>Fechar</button>
+                                    <button type="button" className="btn" onClick={this.handleAlterar}>Alterar</button>
+                                    <button type="button" className="btn" onClick={this.handleExcluir}>Excluir</button>
                                 </div>
                             </div>
                         </div>

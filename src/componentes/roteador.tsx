@@ -6,6 +6,8 @@ import FormularioCadastroProduto from "./formularioCadastroProduto";
 import FormularioCadastroServico from "./formularioCadastroServico"
 import ListaProduto from "./listaProduto";
 import ListaServico from "./listaServico";
+import FormularioCadastroPet from "./formularioCadastroPet";
+import ListaPet from "./listaPet";
 
 type state = {
     tela: string
@@ -30,7 +32,8 @@ export default class Roteador extends Component<{}, state> {
 
     render() {
         let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="#99ccff" 
-        botoes={['Clientes', 'Cadastro Cliente', 'Cadastro Produto', 'Cadastro Serviço', 'Lista Produtos', 'Lista Serviços']} />;
+        botoes={['Clientes', 'Cadastro Cliente', 'Cadastro Produto', 'Cadastro Serviço',
+             'Lista Produtos', 'Lista Serviços','Cadastrar Pet','Lista Pets']} />;
         
         if (this.state.tela === 'Clientes') {
             return (
@@ -67,7 +70,22 @@ export default class Roteador extends Component<{}, state> {
                     <ListaServico tema="#e3f2fd" />
                 </>
             );
-        } else {
+        }else if (this.state.tela === 'Lista Pets') { 
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaPet tema="#e3f2fd" />
+                </>
+            );
+        }else if (this.state.tela === 'Cadastrar Pet') { 
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroPet tema="#e3f2fd" />
+                </>
+            );
+        }
+         else {
             return (
                 <>
                     {barraNavegacao}

@@ -43,6 +43,17 @@ export default class ListaProduto extends Component<props, state> {
         this.setState({ showModal: false });
     }
 
+    handleAlterar() {
+        console.log(`Alterar Produto: ${this.state.selectedItem}`);
+        this.handleCloseModal();
+    }
+
+    handleExcluir() {
+        console.log(`Deletar Produto: ${this.state.selectedItem}`);
+        this.handleCloseModal();
+    }
+    
+
     render() {
         const { tema } = this.props;
         const { selectedItem, showModal } = this.state;
@@ -76,7 +87,8 @@ export default class ListaProduto extends Component<props, state> {
                                     <p>Preço: {preco}</p>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn" onClick={this.handleCloseModal}>Fechar</button>
+                                <button type="button" className="btn" onClick={this.handleAlterar}>Alterar</button>
+                                <button type="button" className="btn" onClick={this.handleExcluir}>Excluir</button>
                                 </div>
                             </div>
                         </div>
