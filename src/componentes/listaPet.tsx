@@ -70,10 +70,11 @@ export default class ListaPet extends Component<props, state> {
                                     <button type="button" className="btn-close" onClick={this.handleCloseModal}></button>
                                 </div>
                                 <div className="modal-body">
-                                    <p>nome: {selectedItem}</p>
-                                    <p>tipo: {selectedItem}</p>
-                                    <p>raça: {selectedItem}</p>
-                                    <p>genero: {selectedItem}</p>
+                                    <p>Dono: Dono do {selectedItem}</p>
+                                    <p>Nome: {selectedItem}</p>
+                                    <p>Tipo: {selectedItem}</p>
+                                    <p>Raça: {selectedItem}</p>
+                                    <p>Genero: {selectedItem}</p>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn" onClick={this.handleAlterar}>Alterar</button>

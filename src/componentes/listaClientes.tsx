@@ -73,7 +73,14 @@ export default class ListaCliente extends Component<props, state> {
                                     <p>nome social: {selectedItem}</p>
                                     <p>cpf: {selectedItem}</p>
                                     <p>data emissão: {selectedItem}</p>
-                                    <p>email: {selectedItem}@email.com</p>
+                                    <p>rg: {selectedItem}</p>
+                                    <p>data emissão: {selectedItem}</p>
+                                    <p>telefone: {selectedItem}</p>
+                                    <p>Pet Nome: {selectedItem}</p>
+                                    <p>Raça: {selectedItem}</p>
+                                    <p>Tipo: {selectedItem}</p>
+                                    <p>Genero: {selectedItem}</p>
+                                    
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn" onClick={this.handleAlterar}>Alterar</button>
